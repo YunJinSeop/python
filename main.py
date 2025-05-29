@@ -12,6 +12,10 @@ df = pd.read_csv("C:\myproject\midtermtest\python-2\data.csv")
 drop_cols = ['Unnamed: 0', 'EmployeeCount', 'StandardHours']
 df.drop(columns=drop_cols, inplace=True)
 
+print(df.isnull().sum())  
+df.dropna(inplace=True)   
+
+
 df['이직여부'] = df['이직여부'].map({'Yes': 1, 'No': 0})
 
 label_encoders = {}
