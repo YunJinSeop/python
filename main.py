@@ -60,11 +60,11 @@ conf_matrix = confusion_matrix(y_test, y_pred)
 print("정확도:", accuracy)
 print("혼동 행렬:\n", conf_matrix)
 
-# 이직으로 예측된 직원 수
+# 이직으로 예측된 직원수
 predicted_yes = np.sum(y_pred)
 print("이직 예측 직원 수:", predicted_yes)
 
-# 이직 확률 기준 상위 5명
+# 이직확률 기준 상위 5명
 y_prob = model.predict_proba(X_test)[:, 1]
 top5_idx = np.argsort(y_prob)[-5:][::-1]
 top5 = X_test[top5_idx]
